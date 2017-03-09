@@ -1,0 +1,166 @@
+body{
+    font-family: arial;
+    font-size: 13px;
+}
+.nav {
+	height: 50px;
+    background: #38688b;
+}
+.nav a {
+	line-height: 50px;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.search {
+	width: 233px;
+    height: 25px;
+    font-size: 13px;
+    padding: 3px 12px;
+    margin: 5px;
+}
+.cipher-collection, .container {
+	border: 1px solid #ccc;
+	padding: 0 3px;
+	margin: 5px;    
+	border-radius: 2px;
+}
+
+.cipher-name {
+	width: 140px;
+	display: inline-block;
+	vertical-align: top;
+    background-color: #38688b;
+    color: white;
+    text-align: center;
+    border-radius: 2px;
+    line-height: 17px;
+    font-size:12px;
+    margin-right: 10px;
+    margin-top:5px;
+}
+.cipher-name-small {
+	background-color: #38688b;
+    line-height: 17px;
+    color: white;
+    border-radius: 2px;
+}
+.detail-cipher-large {
+	 text-align: center;
+    font-size: 30px;
+    margin: 30px;
+}
+.letter {
+	display: inline-block;
+	text-align: center;
+	margin: 2px 4px;
+	color: grey;
+    font-size: 11px;
+}
+.detail-container {
+	width: 1180px;
+    margin: 0 auto;
+}
+.detail-container .letter {
+	margin: 15px;
+}
+.detail-container .letter span {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.detail-container .custom-text {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-height: 100px;
+}
+.detail-container .custom-text .cipher-char {
+    display: inline-block;
+    text-align: center;
+}
+.image-holder-small {
+	margin: 10px auto;
+	vertical-align: top;
+	width: 25px;
+	height:25px;
+}
+.image-holder-large {
+	vertical-align: top;
+	width: 50px;
+	height:60px;
+	display: inline-block;
+}
+
+.image-holder-xl {
+	vertical-align: top;
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+}
+.image-holder {
+	    vertical-align: top;
+    height: 28px;
+}
+.letter-img-small {
+	max-width: 25px;
+	max-height: 25px;
+}
+.letter-img-large {
+	max-width: 50px;
+	max-height: 50px;
+}
+.letter-img-xl {
+	max-width: 60px;
+    max-height: 60px;
+    /* width: 100%; */
+    /*height: 200%;*/
+}
+.match {
+	text-align: center;
+	color: grey;
+	font-size: 11px;
+	width:80px;
+	display: inline-block;
+	margin: 0 10px;
+}
+.match span {
+	display: block;
+}
+.character {
+	font-size: 15px;
+    line-height: 20px;
+    color: black;
+}
+
+.unknown-character-holder {
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 80px;
+    height: 93px;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.unknown-character {
+    display: inline-block;
+    margin: 10px 0;
+    width: 100px;
+    height: 95px;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: top;
+}
+.next.button{
+    position: fixed;
+    right: 10px;
+    top: 95px;
+}   
+.prev.button{
+ 	position: fixed;
+    left: 10px;
+    top: 95px;	
+}   
+

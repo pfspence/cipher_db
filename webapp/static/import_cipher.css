@@ -1,0 +1,61 @@
+.canvas {
+	/*border: 1px solid black;*/
+}
+body {
+	background: #f8f8f8;
+}
+
+.flex-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    display: flex;
+    background: #fff;
+    overflow: hidden;
+    width: 100%;
+    min-height: 800px;
+    max-height: 1000px;
+}
+.left {
+	width: 300px;
+    background: #4b4b4b;
+    order: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    color: white;
+}
+.right {
+    order: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+}
+.group {
+	margin: 5px;
+    padding: 5px;
+    background: rgba(255,255,255,0.1);
+}
+.group-header {
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.button {
+	padding: 4px 16px;
+    background-color: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: white;
+}
+input {
+    color: white;
+    padding: 4px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.6);
+}

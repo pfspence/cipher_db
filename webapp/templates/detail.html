@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cipher Detail</title>
+	<script src="static/jquery.js"></script>
+	<script src="static/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/list.css">
+</head>
+<body>
+	<div id="app">
+		<div class="nav">
+			<a href="/list">Search Cipher DB</a>
+			<a href="/import_cipher">Import Cipher</a>
+			<a href="/detail">Cipher Detail</a>
+			<a href="/ocr_search">OCR Search</a>
+		</div>
+		<div class="detail-cipher-large">{{ cipher.name }}</div>
+
+		<div class="detail-container">
+			<div v-for="letter in cipher.letters" class="letter">
+				<div class="image-holder-xl" v-on:click="addLetter(letter.name); updateText()">
+					<img  v-bind:src="'static/ciphers_lib/' + letter.path" class="letter-img-xl"/>
+				</div>
+				<span> {{ letter.name }} </span>
+			</div>
+
+			<div class="custom-text">
+				<div class="left-panel">
+<!-- 					<span>Font Size:</span>
+					<input type="number" v-model="fontSize"/> -->
+					<span>Kerning:</span>
+					<input type="number" v-model="kerning"/>
+					<span>Vertical Align:</span>
+					<select v-model="vertAlign">
+					  <option value="top">top</option>
+					  <option value="middle">middle</option>
+					  <option value="bottom">bottom</option>
+					</select>
+					<span>Use Alternate Set:</span>
+					<input type="checkbox" v-model="useAlternate" v-on:change="updateText()"/>
+				</div>
+				<div class="right-panel">
+					<input id="customText" v-model="text" v-on:keyup="updateText" style="width:100%; margin: 10px 0;" placeholder="Custom Text..." />
+					<div class="cipher-container">
+						<div v-for="char in textArray" class="cipher-char" v-bind:style="{ 'vertical-align': vertAlign}">
+							<img  v-bind:src="'static/ciphers_lib/' + char.path" v-bind:style="{ 'margin-right': kerning + 'px'}" onerror="this.src='static/blank.jpg'"/>
+							<div style="margin-top:5px;">{{char.name}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button v-on:click="goPrev" class="button prev">Previous</button>
+		<button v-on:click="goNext" class="button next">Next</button>
+	</div>
+
+	<script src="static/detail.js"></script>
+
+</body>
+</html>

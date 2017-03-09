@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OCR Search</title>
+	<script src="static/jquery.js"></script>
+	<script src="static/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/list.css">
+</head>
+<body>
+	<div id="app">
+		<div class="nav">
+		<a href="/list">Search Cipher DB</a>
+		<a href="/import_cipher">Import Cipher</a>
+		<a href="/detail">Cipher Detail</a>
+		<a href="/ocr_search">OCR Search</a>
+	</div>
+		<div class="container">
+			<form enctype="multipart/form-data">
+			    <input name="file" type="file" />
+			    <input type="button" value="Upload" />
+			</form>
+			</div>
+
+
+		<div v-for="file_info in file_infos" class="container">
+			<div class="unknown-character-holder">
+				<img v-bind:src="file_info.candidate_path" class="letter-img-small unknown-character"/>
+				<div>{{ file_info.candidate_name }}</div>
+			</div>
+			<div v-for="match in file_info.matches" class="match">
+				<div class="image-holder-small">
+					<img v-bind:src="match.path" class="letter-img-small"/>
+				</div>
+				<div class="cipher-name-small">{{ match.cipher_name }}</div>
+				<span class="character">{{ match.character }}</span>
+				<span>{{ match.score }}</span>
+			</div>
+		</div>
+	</div>
+	<script src="static/edit_set.js"></script>
+</body>
+</html>

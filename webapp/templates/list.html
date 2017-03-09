@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Cipher DB</title>
+	<script src="static/jquery.js"></script>
+	<script src="static/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/list.css">
+</head>
+<body>
+	<div id="app">
+		<div class="nav">
+		<a href="/list">Search Cipher DB</a>
+		<a href="/import_cipher">Import Cipher</a>
+		<a href="/detail">Cipher Detail</a>
+		<a href="/ocr_search">OCR Search</a>
+	</div>
+		<input class="search" type="text" v-model="filter" placeholder="Filter...">({{filteredCiphers.length}})
+		<div v-for="cipher in filteredCiphers" class="cipher-collection" v-on:click="goTo(cipher.name)">
+		<div class="cipher-name">{{ cipher.name }}</div>
+		<div v-for="letter in cipher.letters" class="letter">
+			<div class="image-holder">
+				<img  v-bind:src="'static/ciphers_lib/' + letter.path" class="letter-img-small"/>
+			</div>
+			<span> {{ letter.name }} </span>
+	  </div>
+	  </div>
+	</div>
+
+	<script src="static/list.js"></script>
+
+</body>
+</html>

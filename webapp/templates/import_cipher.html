@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Work</title>
+	<script src="static/jquery.js"></script>
+	<script src="static/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/list.css">
+	<link rel="stylesheet" type="text/css" href="static/import_cipher.css">
+</head>
+<body>
+<div class="nav">
+	<a href="/list">Search Cipher DB</a>
+	<a href="/import_cipher">Import Cipher</a>
+	<a href="/detail">Cipher Detail</a>
+	<a href="/ocr_search">OCR Search</a>
+</div>
+
+		<div id="app" class="flex-container">
+			<div class="left">
+			<div class="group">
+				<form action="#" onsubmit="return false;">
+					<input type="file" id="imgfile">
+					<input type="button" id="btnLoad" value="Load" onclick="loadImage()">
+				</form>
+			</div>
+				<div class="group">
+					<div class="group-header">Crop Method</div>
+					<form>
+						<input type="radio" name="crop-method" value="auto" checked> Auto Crop<br>
+						<input type="radio" name="crop-method" value="manual"> Manual Crop<br>
+					</form>
+				</div>
+
+				<div class="group">
+					<div class="group-header">Auto Crop Settings</div>
+					<table>
+						<tbody>
+							<tr>
+								<td>Width:</td> 
+								<td><input type="number" v-model="autobox.width" v-on:blur="updateAutobox"></td>
+							</tr>
+							<tr>
+								<td>Height:</td>
+								<td><input type="number" v-model="autobox.height" v-on:blur="updateAutobox"></td>
+							</tr>
+							<tr>
+								<td>Threshold:</td>
+								<td><input type="number" value="99"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="group">
+					<div class="group-header">Auto Sequence</div>
+					<table>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" v-model="autoSequence"></td> 
+								<td>Auto Sequence:</td>
+								<td><input id="name" type="text" v-model="name" v-on:blur="updateSequence"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Prepend:</td>
+								<td><input type="text" v-model="prepend"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Append:</td>
+								<td><input type="text" v-model="append"></td>
+							</tr>
+							<tr>
+								<td><input v-model="showLabels" type="checkbox"></td> 
+								<td>Show Labels</td>
+							</tr>
+						</tbody>
+					</table>
+					</form>
+				</div>
+				<div class="group">
+					<div class="group-header">Cipher Set</div>
+					 <input type="text" v-model="cipher_name" placeholder="Cipher Name..." style="width:196px;">
+					<button v-on:click="processImages" class="button">Import</button>
+				</div>
+			</div>
+
+
+			<div class="right">
+
+
+				<canvas id="canvas" class="canvas">
+				</canvas>
+
+				<canvas id="canvas2" class="canvas" width="100" height="100">
+				</canvas>
+
+				<div id="status"></div>
+				<div id="status2"></div>
+
+				<div v-for="file_info in file_infos" class="container">
+					<div class="unknown-character-holder">
+						<img v-bind:src="file_info.candidate_path" class="letter-img-small unknown-character"/>
+						<div>{{ file_info.candidate_name }}</div>
+					</div>
+					<div v-for="match in file_info.matches" class="match">
+						<div class="image-holder-small">
+							<img v-bind:src="match.path" class="letter-img-small"/>
+						</div>
+						<div class="cipher-name-small">{{ match.cipher_name }}</div>
+						<span class="character">{{ match.character }}</span>
+						<span>{{ match.score }}</span>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<script src="static/image_work.js"></script>
+</body>
+</html>
