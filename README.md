@@ -1,6 +1,12 @@
 # cipher_db
+## Search By Name or Visually
+<img src="images/list.jpg"/> 
 
-<img src="images/list.jpg" width="700"/> 
-<img src="images/detail.jpg" width="700"/> 
+## Create or Decipher Messages
+<img src="images/detail.jpg"/> 
+
+## OCR for Unknown Ciphers
 <img src="images/ocr.jpg" width="700"/> 
-<img src="images/auto-crop.jpg" width="700"/> 
+
+## Auto Crop Tools for Importing
+<img src="images/auto-crop.jpg" width="600"/> 
