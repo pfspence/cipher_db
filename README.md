@@ -1,5 +1,5 @@
 # cipher_db
-## Search By Name or Visually
+## Search By Name or Browse All
 <img src="images/list.jpg"/> 
 
 ## Create or Decipher Messages
@@ -9,4 +9,4 @@
 <img src="images/ocr.jpg" width="700"/> 
 
 ## Auto Crop Tools for Importing
-<img src="images/auto-crop.jpg" width="600"/> 
+<img src="images/auto-crop.jpg" width="700"/> 
