@@ -1,4 +1,14 @@
 # cipher_db
+
+## Getting Started
+```
+pip install opencv-python
+pip install scikit-image
+
+cd webapp
+python ./webapp.py
+```
+
 ## Search By Name or Browse All
 <img src="images/list.jpg"/> 
 

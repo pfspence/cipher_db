@@ -1,6 +1,7 @@
 #!/usr/local/bin/python
 # import the necessary packages
-from skimage.measure import structural_similarity as ssim
+from skimage import measure
+# from skimage.measure import structural_similarity
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
@@ -79,7 +80,7 @@ def get_scores(filepath):
 					letter_image = cv2.cvtColor(letter_image, cv2.COLOR_BGR2GRAY)
 					letter_image = cv2.resize(letter_image, (100, 100))
 					mse_score = mse(candidate_image, letter_image)
-					ssim_score = ssim(candidate_image, letter_image)
+					ssim_score = measure.compare_ssim(candidate_image, letter_image)
 					track_scores(scores, path, directory, file, mse_score, ssim_score)
 	scores = sorted(scores, key=lambda score: score.score)
 	return scores[0:15]
